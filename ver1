@@ -1,0 +1,31 @@
+from random import randint
+
+
+
+words = ['chinese', 'rat','black', 'slave']
+your_word = words[randint(0,3)]
+count =0
+word_graphic = []
+
+for i in your_word:
+    word_graphic.append('_')
+
+print(word_graphic)
+
+while count < len(your_word):
+    guess = input('Guess a letter:  ')
+ 
+
+    if your_word.find(guess) == -1:
+        print('Nope lol\n')
+
+    else:
+        
+        word_graphic.pop(your_word.find(guess))
+        word_graphic.insert(your_word.find(guess),guess)
+    
+    print(word_graphic)
+    print('\n')
+    
+
+    count = count +1 
